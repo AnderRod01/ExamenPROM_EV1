@@ -29,7 +29,8 @@ public class ActividadLocalidades extends AppCompatActivity {
         lblUbicacion = (TextView) findViewById(R.id.lblUbicacion);
         rdgroup = (RadioGroup) findViewById(R.id.rdGroup);
         btnVisualizar = (Button) findViewById(R.id.btnVisualizar);
-
+        rbCosta = (RadioButton) findViewById(R.id.rdCosta);
+        rbInterior = (RadioButton) findViewById(R.id.rdInterior);
 
         //Declaracion del spinner y su adaptador
         spinnerLoc = (Spinner) findViewById(R.id.spinnerLoc);
@@ -49,11 +50,11 @@ public class ActividadLocalidades extends AppCompatActivity {
                 if (i == 1 || i== 3 || i==5){
                     lblUbicacion.setVisibility(View.VISIBLE);
                     rdgroup.setVisibility(View.VISIBLE);
-                    rbCosta.setSelected(true);
+                    rbCosta.setChecked(true);
                 }else{
                     lblUbicacion.setVisibility(View.INVISIBLE);
                     rdgroup.setVisibility(View.INVISIBLE);
-                    rbInterior.setSelected(true);
+                    rbInterior.setChecked(true);
                 }
             }
 
@@ -71,6 +72,7 @@ public class ActividadLocalidades extends AppCompatActivity {
                 Intent intent =  new Intent(ActividadLocalidades.this, ListaLocalidades.class);
                 intent.putExtra("provincia", spinnerLoc.getSelectedItem().toString());
                 intent.putExtra("ubicacion", radioButton.getText().toString());
+                startActivity(intent);
             }
         });
 

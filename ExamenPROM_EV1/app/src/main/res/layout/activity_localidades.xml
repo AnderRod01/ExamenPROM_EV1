@@ -56,13 +56,15 @@
             android:id="@+id/rdCosta"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Masculino" />
+            android:text="Costa" />
 
         <RadioButton
             android:id="@+id/rdInterior"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Femenino" />
+            android:text="Interior"
+            android:checked="true"
+            />
     </RadioGroup>
 
 <!--    Visualizar lista-->
