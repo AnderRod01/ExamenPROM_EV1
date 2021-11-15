@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ActividadCandidato">
+
+<!--    Titulo-->
+
+    <TextView
+        android:id="@+id/lblTitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_margin="10dp"
+        android:text="PERFIL DEL CANDIDATO"
+        android:textSize="25dp"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+<!--    Nombre-->
+    <TextView
+        android:id="@+id/lblNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nombre:"
+        android:layout_margin="15dp"
+        style="@style/Subtitulo"
+        app:layout_constraintTop_toBottomOf="@id/lblTitulo"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <EditText
+        android:id="@+id/txtNombre"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/lblNombre"
+        app:layout_constraintLeft_toRightOf="@id/lblNombre"
+        app:layout_constraintTop_toBottomOf="@id/lblTitulo" />
+
+<!--    Fecha de nacimiento-->
+    <TextView
+        android:id="@+id/lblFecha"
+        style="@style/Subtitulo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="25dp"
+        android:text="Fecha Nacimiento:"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lblNombre" />
+
+    <EditText
+        android:id="@+id/txtDia"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/lblFecha"
+        app:layout_constraintStart_toEndOf="@+id/lblFecha" />
+
+    <TextView
+        android:id="@+id/lblSimbolo1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="/"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/lblFecha"
+        app:layout_constraintStart_toEndOf="@+id/txtDia" />
+
+    <EditText
+        android:id="@+id/txtMes"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/lblFecha"
+        app:layout_constraintStart_toEndOf="@+id/lblSimbolo1" />
+
+    <TextView
+        android:id="@+id/lblSimbolo2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="/"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="@+id/lblFecha"
+        app:layout_constraintStart_toEndOf="@+id/txtMes" />
+
+    <EditText
+        android:id="@+id/txtAnio"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:layout_marginTop="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/lblFecha"
+        app:layout_constraintStart_toEndOf="@+id/lblSimbolo2" />
+
+<!--    provincia-->
+
+    <TextView
+        android:id="@+id/lblProvincia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Subtitulo"
+        android:text="Provincia:"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="35dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lblFecha"/>
+
+    <Spinner
+        android:id="@+id/spinnerProvincia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/lblProvincia"
+        app:layout_constraintLeft_toRightOf="@id/lblProvincia" />
+
+<!--sexo-->
+
+    <TextView
+        android:id="@+id/lblUbicacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sexo:"
+        style="@style/Subtitulo"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="35dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lblProvincia"/>
+
+
+    <RadioGroup
+        android:id="@+id/rdGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@+id/lblUbicacion"
+        app:layout_constraintStart_toEndOf="@+id/lblUbicacion"
+        app:layout_constraintTop_toBottomOf="@+id/lblUbicacion">
+
+        <RadioButton
+            android:id="@+id/rdMasculino"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Masculino" />
+
+        <RadioButton
+            android:id="@+id/rdFemenino"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Femenino" />
+    </RadioGroup>
+
+<!--    conocimientos-->
+
+    <TextView
+        android:id="@+id/lblConocimientos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Subtitulo"
+        android:text="Conocimientos"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="45dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lblUbicacion"/>
+
+    <CheckBox
+        android:id="@+id/PHP"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PHP"
+        android:layout_marginLeft="15dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lblConocimientos"/>
+
+    <CheckBox
+        android:id="@+id/cboxJAVA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="JAVA"
+        android:layout_marginLeft="15dp"
+        app:layout_constraintLeft_toRightOf="@id/PHP"
+        app:layout_constraintTop_toBottomOf="@id/lblConocimientos"/>
+    <CheckBox
+        android:id="@+id/cboxHTML"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HTML"
+        android:layout_marginLeft="15dp"
+        app:layout_constraintLeft_toRightOf="@id/cboxJAVA"
+        app:layout_constraintTop_toBottomOf="@id/lblConocimientos"/>
+    <CheckBox
+        android:id="@+id/cboxCSS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CSS"
+        android:layout_marginLeft="15dp"
+        app:layout_constraintLeft_toRightOf="@id/cboxHTML"
+        app:layout_constraintTop_toBottomOf="@id/lblConocimientos"/>
+
+<!--    botones-->
+
+    <Button
+        android:id="@+id/btnEvaluar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Evaluar"
+        android:layout_marginTop="30dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/PHP"
+    />
+
+    <Button
+        android:id="@+id/btnSalir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Salir"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/btnEvaluar"
+        app:layout_constraintEnd_toStartOf="@+id/btnEvaluar"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+    <!--    candidatos-->
+
+    <TextView
+        android:id="@+id/lblCandidatos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Candidatos:"
+        style="@style/Subtitulo"
+        android:layout_marginTop="15dp"
+        android:layout_marginLeft="15dp"
+        app:layout_constraintTop_toBottomOf="@id/btnEvaluar"
+        app:layout_constraintLeft_toLeftOf="parent"/>
+
+    <TextView
+        android:id="@+id/lblNumCandidatos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:layout_marginLeft="15dp"
+        app:layout_constraintBottom_toBottomOf="@+id/lblCandidatos"
+        app:layout_constraintLeft_toRightOf="@id/lblCandidatos" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
