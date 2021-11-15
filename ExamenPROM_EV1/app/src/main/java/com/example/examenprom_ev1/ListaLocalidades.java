@@ -52,8 +52,7 @@ public class ListaLocalidades extends AppCompatActivity {
         btnVolver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent =  new Intent(ListaLocalidades.this, ActividadLocalidades.class);
-                startActivity(intent);
+                finish();
             }
         });
     }

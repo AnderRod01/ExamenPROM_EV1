@@ -88,8 +88,7 @@ public class ActividadCandidato extends AppCompatActivity {
         btnSalir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ActividadCandidato.this, MainActivity.class);
-                startActivity(intent);
+                finish();
             }
         });
 

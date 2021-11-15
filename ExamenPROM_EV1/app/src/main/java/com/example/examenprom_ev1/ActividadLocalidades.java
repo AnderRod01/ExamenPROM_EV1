@@ -19,7 +19,7 @@ public class ActividadLocalidades extends AppCompatActivity {
     private TextView lblUbicacion;
     private RadioGroup rdgroup;
     private RadioButton rbCosta, rbInterior;
-    private Button btnVisualizar;
+    private Button btnVisualizar, btnVolver;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +29,7 @@ public class ActividadLocalidades extends AppCompatActivity {
         lblUbicacion = (TextView) findViewById(R.id.lblUbicacion);
         rdgroup = (RadioGroup) findViewById(R.id.rdGroup);
         btnVisualizar = (Button) findViewById(R.id.btnVisualizar);
+        btnVolver = (Button) findViewById(R.id.btnVolver);
         rbCosta = (RadioButton) findViewById(R.id.rdCosta);
         rbInterior = (RadioButton) findViewById(R.id.rdInterior);
 
@@ -73,6 +74,13 @@ public class ActividadLocalidades extends AppCompatActivity {
                 intent.putExtra("provincia", spinnerLoc.getSelectedItem().toString());
                 intent.putExtra("ubicacion", radioButton.getText().toString());
                 startActivity(intent);
+            }
+        });
+
+        btnVolver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
 
